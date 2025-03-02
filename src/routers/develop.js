@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import dotenv from 'dotenv';
-import ApiAccount from '../models/api_account';
-import UserRole from '../models/user_role';
-import SubscriptionPlan from '../models/subscription_plan';
+import ApiAccount from '../models/api_account.js';
+import UserRole from '../models/user_role.js';
+import SubscriptionPlan from '../models/subscription_plan.js';
 
 dotenv.config();
 const DevelopRouter = Router();
