@@ -25,7 +25,7 @@ export async function compare(str) {
         const password = split_key[1];
     
         // get account from db
-        const account = await ApiAccount.findOne({ auth_user: username }).exec();
+        const account = await ApiAccount.findOne({ is_active: true, auth_user: username }).exec();
 
         if (!account)
             throw { message: 'Account not found!' };
