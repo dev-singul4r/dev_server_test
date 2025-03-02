@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import DevelopRouter from './routers/develop';
 
 // env init
 dotenv.config();
@@ -14,9 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // routing
-app.get('/', (req, res) => {
-    res.status(200).send({ message: 'Hello World!' });
-});
+app.use('/dev', DevelopRouter);
 
 // error handling
 app.use((err, req, res, next) => {
