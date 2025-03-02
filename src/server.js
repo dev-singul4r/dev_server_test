@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import DevelopRouter from './routers/develop';
+import DevelopRouter from '/src/routers/develop';
 
 // env init
 dotenv.config();
