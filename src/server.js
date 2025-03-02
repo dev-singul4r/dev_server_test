@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import DevelopRouter from './routers/develop.js';
+import SecuredRouter from './routers/secured.js';
 
 // env init
 dotenv.config();
@@ -15,7 +16,10 @@ app.use(cors());
 app.use(express.json());
 
 // routing
-app.use('/dev', DevelopRouter);
+if (process.env.SERVER_MODE === 'development')
+    app.use('/dev', DevelopRouter);
+
+app.use('/app', SecuredRouter);
 
 // error handling
 app.use((err, req, res, next) => {
